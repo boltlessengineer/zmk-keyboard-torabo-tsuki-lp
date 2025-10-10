@@ -20,7 +20,14 @@
         combo_esc {
             timeout-ms = <30>;
             bindings = <&kp ESC>;
-            key-positions = <25 26>;
+            key-positions = <11 12>;
+            layers = <0>;
+        };
+
+        combo_lang {
+            timeout-ms = <30>;
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <17 18>;
             layers = <0>;
         };
     };
