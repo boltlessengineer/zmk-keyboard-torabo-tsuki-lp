@@ -4,7 +4,63 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
+
+#define L_HAND_KEYS   \
+     0  1  2  3  4    \
+    10 11 12 13 14    \
+    20 21 22 23 24 26 \
+    33 34 35
+
+#define L_THUMB_KEYS \
+             36 37 38
+
+#define R_HAND_KEYS \
+                            5  6  7  8  9 \
+                           15 16 17 18 19 \
+                        27 28 29 30 31 32
+
+#define R_THUMB_KEYS \
+                        39 40
+
 / {
+    behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <130>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <R_HAND_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <130>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <L_HAND_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        pht: positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <1000>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <L_HAND_KEYS>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -13,6 +69,20 @@
             key-positions = <28 29>;
             layers = <2>;
         };
+
+        combo_esc {
+            timeout-ms = <30>;
+            bindings = <&kp ESC>;
+            key-positions = <11 12>;
+            layers = <0>;
+        };
+
+        combo_lang {
+            timeout-ms = <30>;
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <17 18>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -20,42 +90,43 @@
 
         layer_0 {
             bindings = <
-&kp ESC    &kp N1     &kp N2    &kp N3    &kp N4    &kp N5                                                         &kp N6       &kp N7    &kp N8     &kp N9    &kp N0                &kp BSPC
-&kp TAB    &kp Q      &kp W     &kp E     &kp R     &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &kp BSPC
-&kp CAPS   &kp A      &kp S     &kp D     &kp F     &kp G        &mkp LCLK                  &mkp RCLK              &kp H        &kp J     &kp K      &kp L     &kp SEMI              &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B        &kp SPACE                  &kp RET                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &kp RSHFT
-&kp LCTRL  &kp LCTRL  &kp LGUI  &kp LALT  &kp BSPC  &lt 2 SPACE  &mt LEFT_SHIFT LANGUAGE_1  &mt RSHIFT LANGUAGE_2  &lt 3 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &kp RCTRL
+&none  &none        &none       &none        &none       &none                                &none       &none       &none        &none       &none           &none
+&none  &kp Q        &kp W       &kp E        &kp R       &kp T                                &kp Y       &kp U       &kp I        &kp O       &kp SQT         &none
+&none  &hml LCTRL A &hml LALT S &hml LSHFT D &hml LGUI F &kp G        &none        &none      &kp H       &hmr RGUI J &hmr RSHFT K &hmr RALT L &hmr RCTRL SEMI &none
+&none  &kp LSHFT    &kp Z       &kp X        &kp C       &kp V        &kp SPACE    &kp RET    &kp B       &kp N       &kp M        &kp P       &kp RSHFT       &none
+&none  &none        &none       &none        &kp LGUI    &lt 2 SPACE  &lt 3 TAB    &kp ENTER  &lt 1 BSPC  &kp DELETE  &trans       &kp COMMA   &kp DOT         &none
             >;
         };
 
         layer_1 {
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &mkp RCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
+&none  &none  &none   &none   &none   &none                        &none  &none     &none      &none     &none      &none
+&none  &none  &kp N7  &kp N8  &kp N9  &kp EQUAL                    &none  &none     &none      &none     &none      &none
+&none  &none  &kp N4  &kp N5  &kp N6  &kp MINUS  &none      &none  &none  &kp RGUI  &kp RSHFT  &kp RALT  &kp RCTRL  &none
+&none  &none  &kp N1  &kp N2  &kp N3  &kp GRAVE  &none      &none  &none  &none     &none      &none     &kp RSHFT  &none
+&none  &none  &none   &none   &kp DOT &kp N0     &kp TAB    &none  &none  &trans    &none      &none     &none      &none
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &trans            &trans            &trans      &trans      &trans                      &trans          &trans         &trans            &trans             &trans         &trans
-&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  &kp LS(N6)      &kp LS(N7)     &kp LS(N8)        &kp LS(N9)         &kp LS(N0)     &trans
-&trans  &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans  &kp LEFT_BRACE  &kp MINUS      &kp EQUAL         &kp RIGHT_BRACE    &kp COLON      &trans
-&trans  &kp N6            &kp N7            &kp N8      &kp N9      &kp N0      &trans  &trans  &kp LS(MINUS)   &kp LS(EQUAL)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
-&trans  &trans            &trans            &trans      &trans      &trans      &trans  &trans  &kp TAB         &kp DEL        &trans            &trans             &trans         &trans
+&none  &none      &none     &none      &none     &none                           &none     &none      &none      &none      &none     &none
+&none  &none      &none     &none      &none     &none                           &kp SQT   &kp DQT    &kp LPAR   &kp RPAR   &none     &none
+&none  &kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &none   &none        &none      &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SQT   &none
+&none  &kp LSHFT  &none     &none      &none     &none   &kp PG_DN    &kp PG_UP  &kp LBKT  &kp RBKT   &kp COMMA  &kp DOT    &kp FSLH  &none
+&none  &none      &none     &none      &none     &trans  &none        &kp PIPE   &kp BSLH  &none      &none      &kp COMMA  &kp DOT   &none
             >;
         };
 
         layer_3 {
             bindings = <
-&trans  &trans   &trans   &trans        &trans        &trans                      &trans            &trans     &trans         &trans     &trans      &trans
-&trans  &kp F1   &kp F2   &kp F3        &kp F4        &kp F5                      &kp HOME          &kp PG_UP  &kp PAGE_DOWN  &kp END    &kp ESCAPE  &trans
-&trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans  &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp TAB     &trans
-&trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans  &kp SINGLE_QUOTE  &kp DQT    &kp GRAVE      &kp TILDE  &kp PIPE    &trans
-&trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &trans  &trans            &trans     &trans         &trans     &trans      &trans
+&none  &none      &none     &none      &none     &none                     &none     &none      &none      &none      &none           &none
+&none  &none      &none     &none      &none     &none                     &none     &none      &none      &none      &none           &none
+&none  &kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &none   &none     &none   &none     &mkp LCLK  &mkp RCLK  &none      &msc SCRL_DOWN  &none
+&none  &kp LSHFT  &none     &none      &none     &none   &none     &none   &none     &mkp LCLK  &mkp RCLK  &none      &msc SCRL_UP    &none
+&none  &none      &none     &none      &none     &none   &trans    &none   &none     &none      &none      &none      &msc SCRL_DOWN  &none
             >;
         };
+
     };
 };
