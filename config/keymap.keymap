@@ -19,8 +19,7 @@
 #define R_HAND_KEYS \
                             5  6  7  8  9 \
                            15 16 17 18 19 \
-                        27 28 29 30 31 32 \
-                                 42 43 44
+                        27 28 29 30 31 32
 
 #define R_THUMB_KEYS \
                         39 40
@@ -35,7 +34,7 @@
             tapping-term-ms = <400>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <R_HAND_KEYS R_THUMB_KEYS>;
+            hold-trigger-key-positions = <R_HAND_KEYS>;
             hold-trigger-on-release;
         };
 
@@ -47,7 +46,7 @@
             tapping-term-ms = <400>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <L_HAND_KEYS L_THUMB_KEYS>;
+            hold-trigger-key-positions = <L_HAND_KEYS>;
             hold-trigger-on-release;
         };
 
