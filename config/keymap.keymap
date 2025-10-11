@@ -117,8 +117,8 @@
         layer_0 {
             bindings = <
 &kp Q       &kp W       &kp E        &kp R       &kp T                                &kp Y       &kp U       &kp I       &kp O       &kp SQT
-&hml LCTRL A &hml LALT S  &hml LSHFT D &hml LGUI F  &kp G        &none        &none      &kp H       &hmr RGUI J  &hmr RSHFT K &hmr RALT L  &hmr RCTRL SEMI
-&kp LSHFT   &kp Z       &kp X        &kp C       &kp V        &kp SPACE    &kp RET    &kp B       &kp N       &kp M       &kp P       &kp RSHFT
+&hml LCTRL A &hml LALT S  &hml LSHFT D &hml LGUI F  &kp G                                &kp H       &hmr RGUI J  &hmr RSHFT K &hmr RALT L  &hmr RCTRL SEMI
+&kp LSHFT   &kp Z       &kp X        &kp C       &kp V        &kp SPACE    &kp ENTER  &kp B       &kp N       &kp M       &kp P       &kp RSHFT
 &none       &none       &none        &kp LGUI    &lt 2 SPACE  &lt 3 TAB    &kp ENTER  &lt 1 BSPC  &kp DELETE  &trans      &kp COMMA   &kp DOT
             >;
         };
@@ -126,7 +126,7 @@
         layer_1 {
             bindings = <
 &none  &kp N7  &kp N8  &kp N9  &kp EQUAL                    &none  &none     &none      &none     &none
-&none  &kp N4  &kp N5  &kp N6  &kp MINUS  &none      &none  &none  &kp RGUI  &kp RSHFT  &kp RALT  &kp RCTRL
+&none  &kp N4  &kp N5  &kp N6  &kp MINUS                    &none  &kp RGUI  &kp RSHFT  &kp RALT  &kp RCTRL
 &none  &kp N1  &kp N2  &kp N3  &kp GRAVE  &none      &none  &none  &none     &none      &none     &kp RSHFT
 &none  &none   &none   &kp DOT &kp N0     &kp TAB    &none  &none  &trans    &none      &none     &none
             >;
@@ -136,7 +136,7 @@
         layer_2 {
             bindings = <
 &none      &none     &none      &none     &none                           &kp SQT   &kp DQT    &kp LBKT   &kp RBKT   &none
-&kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &none   &none        &none      &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SQT
+&kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &none                           &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SQT
 &kp LSHFT  &none     &none      &none     &none   &kp PG_DN    &kp PG_UP  &kp LBKT  &kp RBKT   &kp COMMA  &kp DOT    &kp FSLH
 &none      &none     &none      &none     &trans  &none        &kp PIPE   &kp BSLH  &none      &none      &kp COMMA  &kp DOT
             >;
@@ -145,7 +145,7 @@
         layer_3 {
             bindings = <
 &none      &none     &none      &none     &none                     &none     &none      &none      &none      &none
-&kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &none   &none     &none   &none     &mkp LCLK  &mkp RCLK  &none      &msc SCRL_DOWN
+&kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &none                     &none     &mkp LCLK  &mkp RCLK  &none      &msc SCRL_DOWN
 &kp LSHFT  &none     &none      &none     &none   &none     &none   &none     &mkp LCLK  &mkp RCLK  &none      &msc SCRL_UP
 &none      &none     &none      &none     &none   &trans    &none   &none     &none      &none      &none      &msc SCRL_DOWN
             >;
