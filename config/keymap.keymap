@@ -98,7 +98,6 @@
 
         layer_0 {
             bindings = <
-&none       &none       &none        &none       &none                                &none       &none       &none       &none       &none
 &kp Q       &kp W       &kp E        &kp R       &kp T                                &kp Y       &kp U       &kp I       &kp O       &kp SQT
 &hml LCTRL A &hml LALT S  &hml LSHFT D &hml LGUI F  &kp G        &none        &none      &kp H       &hmr RGUI J  &hmr RSHFT K &hmr RALT L  &hmr RCTRL SEMI
 &kp LSHFT   &kp Z       &kp X        &kp C       &kp V        &kp SPACE    &kp RET    &kp B       &kp N       &kp M       &kp P       &kp RSHFT
@@ -108,7 +107,6 @@
 
         layer_1 {
             bindings = <
-&none  &none   &none   &none   &none                        &none  &none     &none      &none     &none
 &none  &kp N7  &kp N8  &kp N9  &kp EQUAL                    &none  &none     &none      &none     &none
 &none  &kp N4  &kp N5  &kp N6  &kp MINUS  &none      &none  &none  &kp RGUI  &kp RSHFT  &kp RALT  &kp RCTRL
 &none  &kp N1  &kp N2  &kp N3  &kp GRAVE  &none      &none  &none  &none     &none      &none     &kp RSHFT
@@ -119,7 +117,6 @@
 
         layer_2 {
             bindings = <
-&none      &none     &none      &none     &none                           &none     &none      &none      &none      &none
 &none      &none     &none      &none     &none                           &kp SQT   &kp DQT    &kp LBKT   &kp RBKT   &none
 &kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &none   &none        &none      &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SQT
 &kp LSHFT  &none     &none      &none     &none   &kp PG_DN    &kp PG_UP  &kp LBKT  &kp RBKT   &kp COMMA  &kp DOT    &kp FSLH
@@ -129,7 +126,6 @@
 
         layer_3 {
             bindings = <
-&none      &none     &none      &none     &none                     &none     &none      &none      &none      &none
 &none      &none     &none      &none     &none                     &none     &none      &none      &none      &none
 &kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &none   &none     &none   &none     &mkp LCLK  &mkp RCLK  &none      &msc SCRL_DOWN
 &kp LSHFT  &none     &none      &none     &none   &none     &none   &none     &mkp LCLK  &mkp RCLK  &none      &msc SCRL_UP
