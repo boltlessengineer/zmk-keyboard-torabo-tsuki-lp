@@ -4,14 +4,14 @@
 
 / {
     chosen {
-        zmk,physical-layout = &physical_layout_l;
+        zmk,physical-layout = &physical_layout_s;
         zmk,kscan = &kscan0;
         zmk,battery = &non_lipo_battery;
     };
 
     size_s_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <14>;
+        columns = <12>;
         rows = <4>;
         map = <
             RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                  RC(1,12) RC(1,11) RC(1,10) RC(1,9) RC(1,8)
