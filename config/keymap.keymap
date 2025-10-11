@@ -43,8 +43,8 @@
 
 / {
     chosen {
-        zmk,physical-layout = &my_layout;
-        // zmk,matrix_transform = &size_l_transform;
+        // zmk,physical-layout = &my_layout;
+        zmk,matrix_transform = &size_l_transform;
         zmk,kscan = &kscan0;
         zmk,battery = &non_lipo_battery;
     };
