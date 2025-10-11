@@ -3,12 +3,19 @@
 #include "torabo_tsuki_lp_layouts.dtsi"
 
 / {
-    chosen {
-        zmk,physical-layout = &physical_layout_s;
-        // zmk,matrix_transform = &size_l_transform;
-        zmk,kscan = &kscan0;
-        zmk,battery = &non_lipo_battery;
-    };
+    // chosen {
+    //     zmk,physical-layout = &my_layout;
+    //     // zmk,matrix_transform = &size_l_transform;
+    //     // zmk,kscan = &kscan0;
+    //     zmk,battery = &non_lipo_battery;
+    // };
+
+    // my_layout: physical_layout_3 {
+    //     compatible = "zmk,physical-layout";
+    //     display-name = "My Layout";
+    //     kscan = <&kscan0>;
+    //     transform = <&size_l_transform>;
+    // };
 
     size_s_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
