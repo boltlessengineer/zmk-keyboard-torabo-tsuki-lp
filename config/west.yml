@@ -4,20 +4,27 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: nuovotaka
+      url-base: https://github.com/nuovotaka
+    - name: boltlessengineer
+      url-base: https://github.com/boltlessengineer
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.2
+      revision: v0.3.0
       import: app/west.yml
     - name: zmk-component-bmp-boost
       remote: sekigon-gonnoc
       import: west.yml
+    # - name: zmk-driver-paw3222-alpha
+    #   remote: nuovotaka
+    #   revision: main
     - name: zmk-feature-status-led
       remote: sekigon-gonnoc
       revision: main
-    - name: zmk-driver-paw3222
-      remote: sekigon-gonnoc
-      revision: main
+    # - name: zmk-driver-paw3222
+    #   remote: boltlessengineer
+    #   revision: push-zvvmnkmoyvrz
     - name: zmk-feature-cdc-acm-bootloader-trigger
       remote: sekigon-gonnoc
       revision: main
