@@ -24,51 +24,39 @@
 #define R_THUMB_KEYS \
                         39 40
 
+&mt {
+    flavor = "balanced";
+};
+
 / {
     behaviors {
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            require-prior-idle-ms = <400>;
+            // require-prior-idle-ms = <400>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <130>;
+            quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <R_HAND_KEYS>;
-            hold-trigger-on-release;
+            // hold-trigger-key-positions = <R_HAND_KEYS>;
+            // hold-trigger-on-release;
         };
 
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            require-prior-idle-ms = <400>;
+            // require-prior-idle-ms = <400>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <130>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <L_HAND_KEYS>;
-            hold-trigger-on-release;
-        };
-
-        pht: positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <1000>;
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <L_HAND_KEYS>;
+            // hold-trigger-key-positions = <L_HAND_KEYS>;
+            // hold-trigger-on-release;
         };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        bt_clear {
-            bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
-            layers = <2>;
-        };
 
         combo_esc {
             timeout-ms = <30>;
@@ -92,7 +80,7 @@
             bindings = <
 &none  &none        &none       &none        &none       &none                                &none       &none       &none        &none       &none           &none
 &none  &kp Q        &kp W       &kp E        &kp R       &kp T                                &kp Y       &kp U       &kp I        &kp O       &kp SQT         &none
-&none  &hml LCTRL A &hml LALT S &hml LSHFT D &hml LGUI F &kp G        &none        &none      &kp H       &hmr RGUI J &hmr RSHFT K &hmr RALT L &hmr RCTRL SEMI &none
+&none  &mt  LCTRL A &kp S       &hml LSHFT D &hml LGUI F &kp G        &none        &none      &kp H       &hmr RGUI J &hmr RSHFT K &kp L       &mt  RCTRL SEMI &none
 &none  &kp LSHFT    &kp Z       &kp X        &kp C       &kp V        &kp SPACE    &kp RET    &kp B       &kp N       &kp M        &kp P       &kp RSHFT       &none
 &none  &none        &none       &none        &kp LGUI    &lt 2 SPACE  &lt 3 TAB    &kp ENTER  &lt 1 BSPC  &kp DELETE  &trans       &kp COMMA   &kp DOT         &none
             >;
