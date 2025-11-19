@@ -77,6 +77,20 @@
             key-positions = <17 18>;
             layers = <0>;
         };
+
+        combo_q {
+            timeout-ms = <30>;
+            bindings = <&kp Q>;
+            key-positions = <1 2>; // w, e
+            layers = <0>;
+        };
+
+        combo_sqt {
+            timeout-ms = <30>;
+            bindings = <&kp Q>;
+            key-positions = <7 8>; // i, o
+            layers = <0>;
+        };
     };
 
     keymap {
