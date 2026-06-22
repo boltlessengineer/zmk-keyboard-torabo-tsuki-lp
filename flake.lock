@@ -45,15 +45,14 @@
       "locked": {
         "lastModified": 1782005474,
         "narHash": "sha256-iB5H3+Fx5PG4aDLcrO5zZVApfhylIXky65UKW5aawwg=",
-        "owner": "lilyinstarlight",
-        "repo": "zmk-nix",
         "rev": "b1b53501f0e19a1ec95480a20f1f811092e2befc",
-        "type": "github"
+        "revCount": 368,
+        "type": "git",
+        "url": "file:///Users/boltless/repo/zmk-nix"
       },
       "original": {
-        "owner": "lilyinstarlight",
-        "repo": "zmk-nix",
-        "type": "github"
+        "type": "git",
+        "url": "file:///Users/boltless/repo/zmk-nix"
       }
     }
   },

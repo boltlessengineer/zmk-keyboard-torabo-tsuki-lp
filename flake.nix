@@ -3,7 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     zmk-nix = {
-      url = "github:lilyinstarlight/zmk-nix";
+      url = "git+file:///Users/boltless/repo/zmk-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -28,8 +28,8 @@
 
         board = "bmp_boost";
         shield = "torabo_tsuki_lp_%PART%";
-        # enableZmkStudio = true;
-        snippets = ["studio-rpc-usb-uart"]; # explicitly set studio-rpc-usb-uart instead of enableZmkStudio so it is configured for both left and right side of the board.
+        enableZmkStudio = true;
+        snippets = ["studio-rpc-usb-uart"]; # explicitly set studio-rpc-usb-uart regardless of enableZmkStudio so it is configured for both left and right side of the board.
         parts = [
           "left"
           "right"
