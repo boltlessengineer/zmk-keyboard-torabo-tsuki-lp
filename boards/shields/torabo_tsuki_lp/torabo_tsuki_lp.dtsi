@@ -75,6 +75,11 @@
         compatible = "zmk,cdc-acm-bootloader-trigger";
     };
 
+    pointing_listener: pointing_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+
     vbatt: vbatt {
         // Disable default battery monitoring
         status = "disabled";
