@@ -39,9 +39,9 @@ manifest:
     - name: zmk-feature-status-led
       remote: sekigon-gonnoc
       revision: main
-    # - name: zmk-driver-paw3222
-    #   remote: sekigon-gonnoc
-    #   revision: torabo-tsuki
+    - name: zmk-driver-paw3222
+      url: https://tangled.org/boltless.me/zmk-driver-paw3222
+      revision: push-uupkwuszxoku
     # - name: zmk-driver-iqs7211e
     #   remote: sekigon-gonnoc
     - name: zmk-feature-cdc-acm-bootloader-trigger

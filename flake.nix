@@ -36,9 +36,13 @@
         ];
         centralPart = "right"; # not used since we aren't using enableZmkStudio
         extraWestBuildFlags = [ ];
-        extraCmakeFlags = [
-          "-DZMK_EXTRA_MODULES=${paw3222}"
-        ];
+        # extraCmakeFlags = [ # this can't be used to pass DZMK_EXTRA_MODULES
+        #   "-DZMK_EXTRA_MODULES=${paw3222}"
+        # ];
+        preConfigure = ''
+          westBuildFlagsArray+=("-DZMK_CONFIG=$(readlink -f ${nixpkgs.lib.escapeShellArg "config"})")
+          westBuildFlagsArray+=("-DZMK_EXTRA_MODULES=$zmkModuleRoot;${paw3222}")
+        '';
 
         zephyrDepsHash = "sha256-0qMlYPRXLVlp5m0dao2A+4prbiAVLuNFElMderMXrII=";
 
