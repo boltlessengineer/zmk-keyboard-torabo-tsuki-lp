@@ -18,5 +18,5 @@ config ZMK_MOUSE
 
 config PAW3222
     default y
- 
+
 endif
