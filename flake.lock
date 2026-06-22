@@ -16,9 +16,23 @@
         "type": "github"
       }
     },
+    "paw3222": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1782131408,
+        "narHash": "sha256-a0vqpDZwvdXOTcCo1SMK4PLCnriFy+Gelo9NpRJNte4=",
+        "path": "/Users/boltless/repo/zmk-driver-paw3222",
+        "type": "path"
+      },
+      "original": {
+        "path": "/Users/boltless/repo/zmk-driver-paw3222",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
+        "paw3222": "paw3222",
         "zmk-nix": "zmk-nix"
       }
     },
